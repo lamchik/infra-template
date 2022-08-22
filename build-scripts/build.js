@@ -78,7 +78,7 @@ const createTicketSummary = (latestTag) => {
 }
 
 const createTicketDescription = (latestTag, commits) => {
-  let res = `ответственный за релиз TODO
+  let res = `ответственный за релиз ${process.env.ACTOR}
 коммиты, попавшие в релиз:
 `
   commits.forEach(commit => {

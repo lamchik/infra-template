@@ -18,3 +18,4 @@ jobs:
       - run: node build-scripts/build.js
         env:
           TRACKER_TOKEN: ${{ secrets.TRACKER_SECRET }}
+          ACTOR: ${{ github.actor }}
