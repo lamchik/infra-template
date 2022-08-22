@@ -78,7 +78,8 @@ const createTicketSummary = (latestTag) => {
 }
 
 const createTicketDescription = (latestTag, commits) => {
-  let res = `ответственный за релиз ${process.env.ACTOR}
+  let res = `Ответственный за релиз ${process.env.ACTOR}
+________________________________
 коммиты, попавшие в релиз:
 `
   commits.forEach(commit => {
@@ -102,6 +103,7 @@ const createTicketComment = (tag) => {
 }
 
 async function main(){
+  console.log(JSON.stringify(process.env.EVENT))
   const tagsObject = getLatestTags()
   const commitsInRelease = getCommitsBetweenTags(tagsObject)
   const {latestTag} = tagsObject;

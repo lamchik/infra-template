@@ -19,3 +19,4 @@ jobs:
         env:
           TRACKER_TOKEN: ${{ secrets.TRACKER_SECRET }}
           ACTOR: ${{ github.actor }}
+          EVENT: ${{ github.event }}
