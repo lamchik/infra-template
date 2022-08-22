@@ -103,7 +103,6 @@ const createTicketComment = (tag) => {
 }
 
 async function main(){
-  console.log(JSON.stringify(process.env.EVENT))
   const tagsObject = getLatestTags()
   const commitsInRelease = getCommitsBetweenTags(tagsObject)
   const {latestTag} = tagsObject;
