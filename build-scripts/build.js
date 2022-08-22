@@ -15,8 +15,9 @@ const setReleaseDataToTicket = async (summary, description) => {
     },
   })
 
-  if (response.status !== 200) {
-    throw new Error(`invalid response ${response.statusText}`)
+  if (response.status > 299) {
+    const err = `invalid response ${response.statusText} with code ${response.status}`
+    throw new Error(err)
   }
 
   console.log("Successfully updated ticket summary and description")
@@ -34,8 +35,9 @@ const addCommentToTicket = async (comment) => {
     },
   })
 
-  if (response.status !== 200) {
-    throw new Error(`invalid response ${response.statusText}`)
+  if (response.status > 299) {
+    const err = `invalid response ${response.statusText} with code ${response.status}`
+    throw new Error(err)
   }
 
   console.log("Successfully commented ticket")
