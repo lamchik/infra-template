@@ -14,3 +14,6 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run ts
+      - run: node build-scripts/build.js
+        env:
+          TRACKER_TOKEN: ${{ secrets.TRACKER_SECRET }}
